@@ -13,17 +13,11 @@
     self = [super init];
     if (self) {
         _imagePath = imagePath;
+        if (_imagePath.length) {
+            _image = [UIImage imageWithContentsOfFile:_imagePath];
+        }
     }
     return self;
-}
-
-- (UIImage *)image {
-    UIImage *image = nil;
-    if (_imagePath.length) {
-        image = [UIImage imageWithContentsOfFile:_imagePath];
-    }
-    
-    return image;
 }
 
 @end
